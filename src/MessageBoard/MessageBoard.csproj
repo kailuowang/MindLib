@@ -1,0 +1,76 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEB03066-27FE-4054-B08E-403B754A0178}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MindHarbor.MessageBoard</RootNamespace>
+    <AssemblyName>MindHarbor.MessageBoard</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\NHibernate.Burrow\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\NHibernate.Burrow\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BlockAllFilter.cs" />
+    <Compile Include="DuplicationPreventionListenerFilter.cs" />
+    <Compile Include="GenericMessage.cs" />
+    <Compile Include="GenericMessageWithSource.cs" />
+    <Compile Include="IListenerFilter.cs" />
+    <Compile Include="IMessage.cs" />
+    <Compile Include="IMessageBroadcaster.cs" />
+    <Compile Include="IMessageFilter.cs" />
+    <Compile Include="IMessageListener.cs" />
+    <Compile Include="IMessageListenerByType.cs" />
+    <Compile Include="IMessageWithSource.cs" />
+    <Compile Include="IMessageWithSourceBroadcaster.cs" />
+    <Compile Include="JunctionFilter.cs" />
+    <Compile Include="MessageBroadcasterImpl.cs" />
+    <Compile Include="MessageFilterByTypeAndData.cs" />
+    <Compile Include="MessageFilters.cs" />
+    <Compile Include="MessageListenerByTypeBase.cs" />
+    <Compile Include="MessageWithSourceBroadcasterImpl.cs" />
+    <Compile Include="NullMsgFilter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpecificTypeMessageFilter.cs" />
+    <Compile Include="SpecificTypesMessageFilter.cs" />
+    <Compile Include="TypeMessageFilterBase.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

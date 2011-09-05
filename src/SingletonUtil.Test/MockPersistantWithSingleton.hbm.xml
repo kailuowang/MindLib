@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" schema="dbo" default-lazy="false">
+  <class name="MindHarbor.SingletonUtil.Test.MockPersistantWithSingleton,MindHarbor.SingletonUtil.Test" table="MockWithSingleton">
+    <id name="Id" type="Int32" >
+      <generator class="identity" />
+    </id>
+    <property name="Strategy" type="MindHarbor.SingletonUtil.SingletonUserType, MindHarbor.SingletonUtil" 
+              column="stragey"/>
+  </class>
+</hibernate-mapping>

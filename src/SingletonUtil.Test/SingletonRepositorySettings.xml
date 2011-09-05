@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SingletonRepositorySettings>
+  <registeredTypes namespace="MindHarbor.SingletonUtil.Test">
+    <type name="StrategyA" />
+    <!--<type name="StrategyC" />-->
+  </registeredTypes>
+  <registeredTypes namespace="MindHarbor.SingletonUtil.Test">
+    <type name="StrategyB" />
+  </registeredTypes>
+</SingletonRepositorySettings>

@@ -1,0 +1,109 @@
+<TemplatesExport>
+  <Template uid="090b1431-2feb-4ff4-bdf9-01aa4888732f" text="namespace $NameSpace${&#xD;&#xA;$SELECTION$&#xD;&#xA;}" shortcut="" description="defaultNameSpace" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeAndNamespace" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="NameSpace" expression="fileDefaultNamespace()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="ab794b9a-94db-453d-8fb9-da4fad74927d" text="&lt;asp:UpdatePanel ID=&quot;$upMain$&quot; runat=&quot;server&quot; UpdateMode=&quot;Conditional&quot;&gt;&#xD;&#xA;    &lt;ContentTemplate&gt;&#xD;&#xA;          $SELECTION$&#xD;&#xA;       &lt;/ContentTemplate&gt;&#xD;&#xA;&lt;/asp:UpdatePanel&gt;&#xD;&#xA;" shortcut="" description="UpdatePanel" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx;*.ascx" />
+    </Context>
+    <Categories>
+      <Category name="ASP.NET" />
+    </Categories>
+    <Variables>
+      <Variable name="upMain" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="9168bf7c-f62b-4b8b-a560-6e99a9e44cb1" text="        &lt;table cellpadding=&quot;$cp$&quot; cellspacing=&quot;$cs$&quot; width=&quot;$width$%&quot;&gt; &#xD;&#xA;            &lt;tr&gt;&#xD;&#xA;                &lt;td&gt;  $SELECTION$&#xD;&#xA;                &lt;/td&gt;&#xD;&#xA;            &lt;/tr&gt;&#xD;&#xA;        &lt;/table&gt;" shortcut="" description="Table" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx;*.html;*.htm;*.ascx" />
+    </Context>
+    <Categories>
+      <Category name="ASP.NET" />
+    </Categories>
+    <Variables>
+      <Variable name="cs" expression="constant(&quot;0&quot;)" initialRange="0" />
+      <Variable name="cp" expression="constant(&quot;0&quot;)" initialRange="0" />
+      <Variable name="width" expression="constant(&quot;100&quot;)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="9e25188d-53c4-4e98-8ce8-db37991f3d33" text="        &lt;asp:PlaceHolder ID=&quot;$phMain$&quot; runat=&quot;server&quot;&gt;&#xD;&#xA;            $SELECTION$&#xD;&#xA;        &lt;/asp:PlaceHolder&gt;" shortcut="" description="PlaceHolder" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx; *.ascx" />
+    </Context>
+    <Categories>
+      <Category name="ASP.NET" />
+    </Categories>
+    <Variables>
+      <Variable name="phMain" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="fbd1af83-2be3-4f42-a90a-ee6932c5f230" text="&lt;asp:Content  runat=&quot;server&quot; ID=&quot;content1&quot; ContentPlaceHolderID=&quot;$ContentPlaceHolder1$&quot;&gt;&#xD;&#xA;      $SELECTION$&#xD;&#xA;&lt;/asp:Content&gt;" shortcut="" description="Content" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx" />
+    </Context>
+    <Categories>
+      <Category name="ASP.NET" />
+    </Categories>
+    <Variables>
+      <Variable name="ContentPlaceHolder1" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="332e0dab-6325-447f-b711-96f34ec9d93d" text="        &lt;asp:Panel ID=&quot;$pnMain$&quot; runat=&quot;server&quot;&gt;&#xD;&#xA;            $SELECTION$&#xD;&#xA;        &lt;/asp:Panel&gt;" shortcut="" description="Panel" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx; *.ascx" />
+    </Context>
+    <Categories>
+      <Category name="ASP.NET" />
+    </Categories>
+    <Variables>
+      <Variable name="pnMain" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="679d69c7-b4cc-4460-8d25-26a0763adc2c" text="  &lt;asp:LinkButton ID=&quot;lb$PopupName$&quot; runat=&quot;server&quot;&gt;$popupLinkText$&lt;/asp:LinkButton&gt;&#xD;&#xA;               &lt;asp:Panel ID=&quot;pnl$PopupName$&quot; runat=&quot;server&quot; BackColor=&quot;white&quot; CssClass=&quot;popupTable&quot; &gt;&#xD;&#xA;       $SELECTION$&#xD;&#xA;       &lt;/asp:Panel&gt;&#xD;&#xA; &lt;asp:PopupControlExtender ID=&quot;pce$PopupName$&quot; runat=&quot;server&quot; TargetControlID=&quot;lb$PopupName$&quot;&#xD;&#xA;      PopupControlID=&quot;pnl$PopupName$&quot; Position=&quot;Bottom&quot; /&gt;" shortcut="" description="PopupPanel" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx;*.ascx" />
+    </Context>
+    <Categories>
+      <Category name="ASP.NET" />
+    </Categories>
+    <Variables>
+      <Variable name="popupLinkText" expression="" initialRange="0" />
+      <Variable name="PopupName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="ffdeeea2-c5f6-4c63-aeed-6494f359d64c" text="&lt;table cellpadding=&quot;10&quot; cellspacing=&quot;0&quot; class=&quot;GrayBoarder&quot;&gt;&#xD;&#xA;    &lt;tr&gt;&#xD;&#xA;        &lt;td class=&quot;formheader&quot;&gt;&#xD;&#xA;            &lt;!-- Panel Title Here --&gt;&#xD;&#xA;        &lt;/td&gt;&#xD;&#xA;        &lt;td class=&quot;formheader&quot; valign=&quot;middle&quot; align=&quot;right&quot; style=&quot;cursor: hand&quot; runat=&quot;server&quot;&#xD;&#xA;            id=&quot;td$CollapsiblePanelName$&quot;&gt;&#xD;&#xA;            [&lt;asp:Label ID=&quot;lb$CollapsiblePanelName$&quot; runat=&quot;server&quot;&gt;Show &gt;&gt;&lt;/asp:Label&gt;]&#xD;&#xA;        &lt;/td&gt;&#xD;&#xA;    &lt;/tr&gt;&#xD;&#xA;    &lt;tr&gt;&#xD;&#xA;        &lt;td colspan=&quot;2&quot;&gt;&#xD;&#xA;            &lt;asp:Panel ID=&quot;pn$CollapsiblePanelName$&quot; runat=&quot;server&quot;&gt;&#xD;&#xA;                    $SELECTION$&#xD;&#xA;            &lt;/asp:Panel&gt;&#xD;&#xA;        &lt;/td&gt;&#xD;&#xA;    &lt;/tr&gt;&#xD;&#xA;&lt;/table&gt;&#xD;&#xA;&lt;asp:CollapsiblePanelExtender ID=&quot;cpe$CollapsiblePanelName$&quot; runat=&quot;server&quot; TargetControlID=&quot;pn$CollapsiblePanelName$&quot;&#xD;&#xA;    ExpandDirection=&quot;vertical&quot; ExpandedText=&quot;Hide&quot; CollapsedText=&quot;Show &gt;&gt;&quot; TextLabelID=&quot;lb$CollapsiblePanelName$&quot;&#xD;&#xA;    ExpandControlID=&quot;td$CollapsiblePanelName$&quot; CollapseControlID=&quot;td$CollapsiblePanelName$&quot; Collapsed=&quot;true&quot; /&gt;" shortcut="" description="CollapsiblePanel" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx; *.ascx" />
+    </Context>
+    <Categories>
+      <Category name="ASP.NET" />
+    </Categories>
+    <Variables>
+      <Variable name="CollapsiblePanelName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="481d0d08-215d-408a-b508-0a9d5df06f53" text="&lt;style type=&quot;text/css&quot;&gt;&#xD;&#xA;  &#xD;&#xA;.modalBackground {&#xD;&#xA;	background-color:Gray;&#xD;&#xA;	z-index:0;&#xD;&#xA;	position:absolute;&#xD;&#xA;	left:0;&#xD;&#xA;	height:0;&#xD;&#xA;	filter:alpha(opacity=70);&#xD;&#xA;	opacity:0.7;	&#xD;&#xA;}&#xD;&#xA;.modalPopup {&#xD;&#xA;	background-color:#ffffff;&#xD;&#xA;	border-width:3px;&#xD;&#xA;	border-style:solid;&#xD;&#xA; 	border-color:Gray;&#xD;&#xA;	padding:3px;&#xD;&#xA;	width:400px;&#xD;&#xA;	&#xD;&#xA;	&#xD;&#xA;}&#xD;&#xA;&lt;/style&gt;&#xD;&#xA;&#xD;&#xA;&lt;script runat=&quot;server&quot;&gt;&#xD;&#xA;                       private void Show()&#xD;&#xA;    {&#xD;&#xA;        upMain.Update();&#xD;&#xA;        divInner.Visible = true;&#xD;&#xA;&#xD;&#xA;        ModalPopupExtender1.Show();&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    private void Hide()&#xD;&#xA;    {&#xD;&#xA;        ModalPopupExtender1.Hide();&#xD;&#xA;        upMain.Update();&#xD;&#xA;        divInner.Visible = false;&#xD;&#xA;    }&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&lt;asp:UpdatePanel ID=&quot;upMain&quot; runat=&quot;server&quot; UpdateMode=&quot;Conditional&quot;&gt;&#xD;&#xA;    &lt;ContentTemplate&gt;&#xD;&#xA;        &lt;asp:LinkButton ID=&quot;lbHidden&quot; runat=&quot;server&quot;&gt;&lt;/asp:LinkButton&gt;&#xD;&#xA;        &lt;div id=&quot;divPopup&quot; runat=&quot;server&quot;&gt;&#xD;&#xA;            &lt;div id=&quot;divInner&quot; runat=&quot;server&quot; class=&quot;modalPopup&quot; visible=&quot;false&quot;&gt;&#xD;&#xA;              $SELECTION$&#xD;&#xA;            &lt;/div&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;        &lt;asp:ModalPopupExtender runat=&quot;server&quot; ID=&quot;ModalPopupExtender1&quot; BackgroundCssClass=&quot;modalBackground&quot;&#xD;&#xA;            PopupControlID=&quot;divPopup&quot; DropShadow=&quot;false&quot; TargetControlID=&quot;lbHidden&quot; /&gt;&#xD;&#xA;       &lt;/ContentTemplate&gt;&#xD;&#xA;&lt;/asp:UpdatePanel&gt;" shortcut="" description="ModalPopup" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx; *.ascx" />
+    </Context>
+    <Categories>
+      <Category name="ASP.NET" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+</TemplatesExport>

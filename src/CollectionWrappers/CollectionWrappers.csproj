@@ -1,0 +1,73 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D2C0714-CFA0-421B-917F-34AF0AB445BC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MindHarbor.CollectionWrappers</RootNamespace>
+    <AssemblyName>MindHarbor.CollectionWrappers</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\NHibernate.Burrow\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectionTypeCastWrapper.cs" />
+    <Compile Include="CollectionWrapper.cs" />
+    <Compile Include="CollectionFilterG.cs" />
+    <Compile Include="CollectionFilter.cs" />
+    <Compile Include="ISearchableCollection.cs" />
+    <Compile Include="ListTypeCastWrapper.cs" />
+    <Compile Include="NonGCollectionWrapper.cs" />
+    <Compile Include="PropertyCollectionWrapper.cs" />
+    <Compile Include="PropertyEnumerableWrapper.cs" />
+    <Compile Include="PropertyEnumeratorWrapper.cs" />
+    <Compile Include="PropertyListWrapper.cs" />
+    <Compile Include="ReadonlyCollection.cs" />
+    <Compile Include="EnumerableFilter.cs" />
+    <Compile Include="EnumerableTypeCastWrapper.cs" />
+    <Compile Include="EnumerableWrapper.cs" />
+    <Compile Include="EnumeratorFilter.cs" />
+    <Compile Include="EnumeratorWrapper.cs" />
+    <Compile Include="ListWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchableChildrenCollection.cs" />
+    <Compile Include="SearchableCollectionDecoratorBase.cs" />
+    <Compile Include="SearchableCollectionDecorator.cs" />
+    <Compile Include="SetWrapper.cs" />
+    <Compile Include="Util\PropFieldReflection.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

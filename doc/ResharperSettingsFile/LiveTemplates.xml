@@ -1,0 +1,445 @@
+<TemplatesExport>
+  <Template uid="fa2c1aa8-2d98-4fc9-86b6-517e71263b50" text="private static readonly $Class$ instance = new $Class$();&#xD;&#xA;public static   $Class$ Instance { get{ return instance;}}&#xD;&#xA;&#xD;&#xA;private $Class$(){}" shortcut="single" description="Singleton Simple" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="Class" expression="typeName()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="8f62c800-1a4f-44dc-8e86-0f7a252941f0" text="[Test]&#xD;&#xA;public void $TestName$Test(){&#xD;&#xA;&#xD;&#xA;}" shortcut="Test" description="UnitTest" reformat="false" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="TestName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="d5f933e0-de4b-487f-94e6-7dba91f5b7a1" text="if ($EventName$ != null)&#xD;&#xA;            $EventName$(this, new System.EventArgs());" shortcut="FrEvnt" description="Fire an System.EventHandeler Event" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="Statement" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="EventName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="deb8e00d-83e3-4190-86f7-82fa3c7298ec" text="&#xD;&#xA;        public static ICollection&lt;ValidationError&gt; ValidateName(string n) {&#xD;&#xA;            IList&lt;ValidationError&gt; retVal = new List&lt;ValidationError&gt;();&#xD;&#xA;            if ($TypeName$DAO.Instance.FindByName(n) != null)&#xD;&#xA;                retVal.Add(new ValidationError(&quot;This name is already used&quot;));&#xD;&#xA;            return retVal;&#xD;&#xA;        }&#xD;&#xA;" shortcut="ValidateName" description="ValidateName static methods" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="TypeName" expression="typeName()" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="85b4d10c-1714-4328-bf84-f4c2fc951a1c" text="    public $PropertyType$ $PropertyName$ {&#xD;&#xA;        get {&#xD;&#xA;            if(  ViewState[&quot;$PropertyName$&quot;] == null)&#xD;&#xA;                ViewState[&quot;$PropertyName$&quot;] = $DefaultValue$;&#xD;&#xA;             return ($PropertyType$)ViewState[&quot;$PropertyName$&quot;];&#xD;&#xA;        }&#xD;&#xA;        set {&#xD;&#xA;            ViewState[&quot;$PropertyName$&quot;] = value; &#xD;&#xA;        }&#xD;&#xA;    }" shortcut="PropInViewState" description="Property stored in Viewstate" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="PropertyName" expression="" initialRange="0" />
+      <Variable name="PropertyType" expression="" initialRange="0" />
+      <Variable name="DefaultValue" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="7e1af4ad-3809-4a26-a805-3d400a7d6531" text="private $Type$ $fieldName$;&#xD;&#xA;public $Type$ $PropertyName${&#xD;&#xA;   get{ return $fieldName$;}&#xD;&#xA;   set{ $fieldName$ = value;}&#xD;&#xA;}" shortcut="prop" description="Property" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="Type" expression="" initialRange="0" />
+      <Variable name="fieldName" expression="" initialRange="0" />
+      <Variable name="PropertyName" expression="capitalize(fieldName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="d946d598-066c-43e2-92ca-908702b8c8d4" text="IList&lt;$Type$&gt; $varaible$ = new List&lt;$Type$&gt;();" shortcut="List" description="Declare a new List" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="Statement" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="Type" expression="" initialRange="0" />
+      <Variable name="varaible" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="b6f3dee7-7e66-497c-a7bc-50cd66a9a341" text=" private ISet&lt;$ItemT$&gt; $fieldName$ = new HashedSet&lt;$ItemT$&gt;();&#xD;&#xA;&#xD;&#xA;        public ISet&lt;$ItemT$&gt;  $propertyName$ {&#xD;&#xA;            get { return  new ImmutableSet&lt;$ItemT$&gt; ( $fieldName$); }&#xD;&#xA;        }&#xD;&#xA;" shortcut="SetAssociation" description="Set collection association" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="ItemT" expression="" initialRange="0" />
+      <Variable name="fieldName" expression="" initialRange="0" />
+      <Variable name="propertyName" expression="capitalize(fieldName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="0966137a-22b9-4070-8e08-c3565258d734" text="private $Type$ $fieldName$;&#xD;&#xA;public $Type$ $PropertyName${&#xD;&#xA;   get{ return $fieldName$;}&#xD;&#xA;   set{&#xD;&#xA;    if(value== null) throw new ArgumentNullException();&#xD;&#xA;     $fieldName$ = value;}&#xD;&#xA;}" shortcut="NotNullProperty" description="" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="Type" expression="" initialRange="0" />
+      <Variable name="fieldName" expression="" initialRange="0" />
+      <Variable name="PropertyName" expression="capitalize(fieldName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="3431c3ba-bb07-4067-a67c-3ea9406bcfef" text="&#xD;&#xA;        public override bool Equals(object obj){&#xD;&#xA;            if(this == obj)&#xD;&#xA;                return true;&#xD;&#xA;            $Type$ that = obj as $Type$;&#xD;&#xA;            if(that != null)&#xD;&#xA;                return $wrapeeField$.Equals(that.$wrapeeField$);&#xD;&#xA;            return false;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        public override int GetHashCode()&#xD;&#xA;        {&#xD;&#xA;            return $wrapeeField$.GetHashCode();&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;       public override string ToString(){&#xD;&#xA;            return $wrapeeField$.ToString();&#xD;&#xA;        }" shortcut="wrapperBaiscOverrides" description="override equal and hascode for wrappers" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="Type" expression="typeName()" initialRange="-1" />
+      <Variable name="wrapeeField" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="494ff4d5-2d93-444f-a35d-349ca574eaab" text=" ISet&lt;$T$&gt; retVal = new HashedSet&lt;$T$&gt;();" shortcut="set" description="Initialize a generice HashedSet" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="Statement, TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="T" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="088bb265-1dc9-4842-8972-2384515e03e7" text="		private Dictionary&lt;$SearchKeyType$, $ChildType$&gt; $ChildType$Index;&#xD;&#xA;&#xD;&#xA;        internal $ChildType$ Find$ChildType$($SearchKeyType$ key) {&#xD;&#xA;            ///use a dictionary index to improve the performance&#xD;&#xA;            $ChildType$ retVal = null;&#xD;&#xA;            if ($ChildType$Index == null)&#xD;&#xA;            {&#xD;&#xA;                $ChildType$Index = new Dictionary&lt;$SearchKeyType$, $ChildType$&gt;();&#xD;&#xA;                foreach ($ChildType$ child in $ChildType$s){&#xD;&#xA;                    $ChildType$Index[child.$SearchKeyType$] = child;&#xD;&#xA;                    if (a.$SearchKeyType$.Equals(key))&#xD;&#xA;                        retVal = child;&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;            else&#xD;&#xA;                $ChildType$Index.TryGetValue(key, out retVal);&#xD;&#xA;            return retVal; &#xD;&#xA;        }" shortcut="searchIndex" description="an index dictionary to improve search performance " reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="SearchKeyType" expression="" initialRange="0" />
+      <Variable name="ChildType" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="3a1661de-1a28-4c42-8612-b26a6dd52d17" text="&lt;set name=&quot;$Name$&quot; access=&quot;field.camelcase&quot; cascade=&quot;all-delete-orphan&quot; inverse=&quot;true&quot; lazy=&quot;true&quot;&gt;&#xD;&#xA;  &lt;key column=&quot;$KeyName$&quot; /&gt;&#xD;&#xA;  &lt;one-to-many class=&quot;$Namespace$.$TypeName$&quot;  /&gt;&#xD;&#xA;&lt;/set&gt;" shortcut="setOnToMange" description="a set for an entity" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="Name" expression="" initialRange="0" />
+      <Variable name="KeyName" expression="" initialRange="0" />
+      <Variable name="Namespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="TypeName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="d06337ce-c298-4dd8-90cd-3706a590dfd0" text="  &lt;many-to-one name=&quot;$Name$&quot; class=&quot;$Namespace$.$TypeName$&quot; column=&quot;$KeyName$&quot; /&gt;" shortcut="ManyToOne" description="create a many to one setting" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="Namespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="Name" expression="" initialRange="0" />
+      <Variable name="TypeName" expression="" initialRange="0" />
+      <Variable name="KeyName" expression="capitalize(Name)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="43cb520d-a988-4226-8176-dd05cfea16e8" text=" &lt;id name=&quot;Id&quot; &gt;&#xD;&#xA;      &lt;generator class=&quot;foreign&quot;&gt;&#xD;&#xA;        &lt;param name=&quot;property&quot;&gt;$ParentPropertyName$&lt;/param&gt;&#xD;&#xA;      &lt;/generator&gt;&#xD;&#xA;&lt;/id&gt;&#xD;&#xA;&lt;one-to-one name=&quot;$ParentPropertyName$&quot; class=&quot;$ParentTypeNamespace$.$ParentType$&quot; constrained=&quot;true&quot;/&gt;" shortcut="OneOneChildSide" description=" One to One relationship Child side" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="ParentPropertyName" expression="" initialRange="0" />
+      <Variable name="ParentTypeNamespace" expression="getDefaultNamespace()" initialRange="0" />
+      <Variable name="ParentType" expression="capitalize(ParentPropertyName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="6a1cad0b-d2d0-44bc-b8f6-a8ba900a27e3" text="&lt;one-to-one name=&quot;$ChildPropertyName$&quot; class=&quot;$ChildTypeNamespace$.$ChildType$&quot; /&gt;" shortcut="OneOneParentSide" description="One-to-one settings at the parent side" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="ChildPropertyName" expression="" initialRange="0" />
+      <Variable name="ChildTypeNamespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="ChildType" expression="capitalize(ChildPropertyName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="ee36105c-587f-459b-884e-13f8b3826702" text="    &lt;property column=&quot;$PropertyName$&quot; name=&quot;$PropertyName$&quot;  &#xD;&#xA;          type=&quot;MindHarbor.SingletonUtil.SingletonUserType, MindHarbor.SingletonUtil&quot; /&gt;" shortcut="SingletonProperty" description="a singleton property utilizing the MindHarborSingletonUtil" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="PropertyName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="bcd60979-7654-47c6-b8d8-9b700fe87103" text=" &lt;property name=&quot;$PropertyName$&quot; /&gt;" shortcut="property" description="property" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="PropertyName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="7cf6bff0-1aa1-4140-ae5f-981229669d05" text="&lt;discriminator column=&quot;discriminator&quot; type=&quot;string&quot; /&gt;" shortcut="discriminator" description="" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="ff74deb1-e40b-4c80-82be-1fa56fa2769c" text="    &lt;subclass name=&quot;$SubclassNamespace$.$SubclassName$&quot; discriminator-value=&quot;$discriminator$&quot; &gt;&#xD;&#xA;      &#xD;&#xA;    &lt;/subclass&gt;" shortcut="SubClass" description="subclass" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="SubclassNamespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="SubclassName" expression="" initialRange="0" />
+      <Variable name="discriminator" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="ad191a1a-64bd-41b2-bc97-a5b8f2ba358b" text="&lt;list name=&quot;$PropertyName$&quot; access=&quot;field.camelcase&quot; cascade=&quot;all-delete-orphan&quot; lazy=&quot;true&quot;&gt;&#xD;&#xA;      &lt;key column=&quot;$keycolum$&quot; /&gt;&#xD;&#xA;      &lt;index column=&quot;$indexColumn$&quot; /&gt;&#xD;&#xA;      &lt;one-to-many class=&quot;$ChildrenNameSpace$.$ChildrenType$&quot;  /&gt;&#xD;&#xA;    &lt;/list&gt;" shortcut="list" description="" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="PropertyName" expression="" initialRange="0" />
+      <Variable name="keycolum" expression="" initialRange="0" />
+      <Variable name="indexColumn" expression="" initialRange="0" />
+      <Variable name="ChildrenNameSpace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="ChildrenType" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="e54639c0-0ec0-4da2-9e3c-93e86d47401a" text="  &lt;property name=&quot;$PropertyName$&quot; type=&quot;MindHarbor.TimeDataUtil.DateRangeUserType,MindHarbor.TimeDataUtil&quot;&gt;&#xD;&#xA;      &lt;column name=&quot;$PropertyName$Start&quot;/&gt;&#xD;&#xA;      &lt;column name=&quot;$PropertyName$End&quot; /&gt;&#xD;&#xA;    &lt;/property&gt;" shortcut="DateRangeProp" description="Property of DateRange" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="PropertyName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="f29c462e-c92c-490d-966a-41f0f8a2e255" text="&lt;property name=&quot;HashId&quot; /&gt;" shortcut="HashId" description="" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables />
+    <CustomProperties />
+  </Template>
+  <Template uid="b649a615-e895-448d-8329-f46a0346cf80" text=" //The following code goes to Parent Side&#xD;&#xA;  private ISet&lt;$ChildType$&gt; $childName$s = new HashedSet&lt;$ChildType$&gt;();&#xD;&#xA; public ISet&lt;$ChildType$&gt; $ChildName$s&#xD;&#xA;    {&#xD;&#xA;      get { return new ImmutableSet&lt;$ChildType$&gt;($childName$s); }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    public void Add$ChildName$($ChildType$ val)&#xD;&#xA;    {&#xD;&#xA;      if($childName$s.Add(val))&#xD;&#xA;         val.Add$ParentName$(this);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    public void Remove$ChildName$($ChildType$ val)&#xD;&#xA;    {&#xD;&#xA;      if($childName$s.Remove(val))&#xD;&#xA;        val.Remove$ParentName$(this);&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;&#xD;&#xA;//the following code goes to Child side&#xD;&#xA;  private ISet&lt;$ParentType$&gt; $parentName$s = new HashedSet&lt;$ParentType$&gt;();&#xD;&#xA;&#xD;&#xA;    public ISet&lt;$ParentType$&gt; $ParentName$s&#xD;&#xA;    {&#xD;&#xA;      get { return new ImmutableSet&lt;$ParentType$&gt;($parentName$s); }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    internal void Add$ParentName$($ParentType$ val)&#xD;&#xA;    {&#xD;&#xA;     $parentName$s.Add(val);&#xD;&#xA;    }&#xD;&#xA;    internal void Remove$ParentName$($ParentType$ val)&#xD;&#xA;    {&#xD;&#xA;      $parentName$s.Remove(val);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;!-- the followling mapping info in the parent side mappingfile --&gt;&#xD;&#xA;      &lt;set name=&quot;$ChildName$s&quot; access=&quot;field.camelcase&quot; table=&quot;tbl$ChildName$_$ParentName$&quot; lazy=&quot;true&quot;&gt;&#xD;&#xA;      &lt;key column=&quot;$ParentName$Id&quot; /&gt;&#xD;&#xA;      &lt;many-to-many class=&quot;$namespace$.$ChildType$&quot;  column=&quot;$ChildName$Id&quot; /&gt;&#xD;&#xA;    &lt;/set&gt;&#xD;&#xA;    &#xD;&#xA;&lt;!-- the followling mapping info in the child side --&gt;&#xD;&#xA;    &lt;set name=&quot;$ParentName$s&quot; access=&quot;field.camelcase&quot; inverse=&quot;true&quot; table=&quot;tbl$ChildName$_$ParentName$&quot; lazy=&quot;true&quot;&gt;&#xD;&#xA;      &lt;key column=&quot;$ChildName$Id&quot; /&gt;&#xD;&#xA;      &lt;many-to-many class=&quot;$namespace$.$ParentType$&quot;  column=&quot;$ParentName$Id&quot; /&gt;&#xD;&#xA;    &lt;/set&gt;" shortcut="ManytoManySet" description="generate the code for a many-to-many association" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="ChildName" expression="" initialRange="0" />
+      <Variable name="ParentName" expression="" initialRange="0" />
+      <Variable name="namespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="ChildType" expression="capitalize(ChildName)" initialRange="0" />
+      <Variable name="childName" expression="decapitalize(ChildName)" initialRange="1" />
+      <Variable name="ParentType" expression="capitalize(ParentName)" initialRange="0" />
+      <Variable name="parentName" expression="decapitalize(ParentName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="f73baaa7-cdbd-4fdf-bbf0-48de704a2ed7" text=" &lt;property name=&quot;$propName$&quot;  type=&quot;MindHarbor.MiscNHibernateUserTypes.EncryptedStringType,MindHarbor.MiscNHibernateUserTypes&quot; /&gt;&#xD;&#xA;  " shortcut="encryptProp" description="Encryptional String Property" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.hbm.xml" />
+    </Context>
+    <Categories>
+      <Category name="hbm" />
+    </Categories>
+    <Variables>
+      <Variable name="propName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="3419fddf-f65c-47a0-b306-163ab3650a44" text="&lt;configSections&gt;&#xD;&#xA;   &lt;section name=&quot;MindHarbor.DomainTemplate&quot;&#xD;&#xA;           type=&quot;MindHarbor.DomainTemplate.Configuration.MHDomainTemplateSection, MindHarbor.DomainTemplate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null&quot;&#xD;&#xA;           allowDefinition=&quot;Everywhere&quot; allowExeDefinition=&quot;MachineToApplication&quot; restartOnExternalChanges=&quot;true&quot; /&gt;&#xD;&#xA;&lt;/configSections&gt;&#xD;&#xA;&#xD;&#xA;&lt;MindHarbor.DomainTemplate&gt;&#xD;&#xA;    &lt;persistantUnits&gt;&#xD;&#xA;      &lt;add name=&quot;PersistantUnit1&quot; enableAuditLog=&quot;false&quot;  &gt;&#xD;&#xA;        &lt;domainLayerAssemblies&gt;&#xD;&#xA;          &lt;add name=&quot;$DomainLayerAssemblyName$&quot;   domianLayerFactoryName=&quot;$DomainLayerFactoryName$&quot; /&gt;&#xD;&#xA;        &lt;/domainLayerAssemblies&gt;&#xD;&#xA;        &lt;ORMFrameworkSettings&gt;&#xD;&#xA;          &lt;add key=&quot;hibernate.connection.provider&quot; value=&quot;NHibernate.Connection.DriverConnectionProvider&quot;/&gt;&#xD;&#xA;          &lt;add key=&quot;hibernate.dialect&quot; value=&quot;NHibernate.Dialect.MsSql2000Dialect&quot;/&gt;&#xD;&#xA;          &lt;add key=&quot;hibernate.connection.driver_class&quot; value=&quot;NHibernate.Driver.SqlClientDriver&quot;/&gt;&#xD;&#xA;          &lt;add key=&quot;hibernate.connection.connection_string&quot; value=&quot;Server=localhost;Database=$DatabaseName$;User=sa;Pwd=$DatabasePassword$;&quot;/&gt;&#xD;&#xA;          &lt;add key=&quot;hibernate.show_sql&quot; value=&quot;false&quot;/&gt;&#xD;&#xA;        &lt;/ORMFrameworkSettings&gt;&#xD;&#xA;      &lt;/add&gt;&#xD;&#xA;    &lt;/persistantUnits&gt;&#xD;&#xA;&lt;/MindHarbor.DomainTemplate&gt;&#xD;&#xA;&#xD;&#xA;&lt;appSettings&gt;&#xD;&#xA;    &lt;add key=&quot;SingletonRepositoryAssemblies&quot; value=&quot;$DomainLayerAssemblyName$&quot;/&gt;&#xD;&#xA;    &lt;add key=&quot;MindHarbor.GenControlLib.PersistantField.DefaultLoaderName&quot;&#xD;&#xA;        value=&quot;MindHarbor.DomainTemplate.NHDomain.Loader,MindHarbor.DomainTemplate&quot; /&gt;&#xD;&#xA;&lt;/appSettings&gt;&#xD;&#xA;  &#xD;&#xA;&lt;system.web&gt;  &#xD;&#xA;   &lt;httpModules&gt;&#xD;&#xA;   	&lt;add name=&quot;NHSessModule&quot; type=&quot;MindHarbor.DomainTemplate.NHDomain.NHSessHTTPModule&quot;/&gt;&#xD;&#xA;  &lt;/httpModules&gt;&#xD;&#xA;&lt;/system.web&gt;" shortcut="basicSetting" description="Basic Setting for an application" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.config; *.config.template" />
+    </Context>
+    <Categories>
+      <Category name="Configuration" />
+    </Categories>
+    <Variables>
+      <Variable name="DomainLayerAssemblyName" expression="" initialRange="0" />
+      <Variable name="DomainLayerFactoryName" expression="" initialRange="0" />
+      <Variable name="DatabaseName" expression="" initialRange="0" />
+      <Variable name="DatabasePassword" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="03311627-0191-4fe5-adde-129e468550d2" text="&lt;script runat=&quot;server&quot;&gt;&#xD;&#xA;        public event EventHandler Selected$EntityName$Changed;&#xD;&#xA;&#xD;&#xA;      &#xD;&#xA;        protected void $gridViewId$_SelectedIndexChanged(object sender, EventArgs e)&#xD;&#xA;        {&#xD;&#xA;            if (Selected$EntityName$Changed != null)&#xD;&#xA;               Selected$EntityName$Changed(this, new EventArgs());&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        public $EntityType$ Selected$EntityName$&#xD;&#xA;        {&#xD;&#xA;            get { return $DAOName$.Instance.FindById((int)$gridViewId$.SelectedDataKey[&quot;Id&quot;]); }&#xD;&#xA;            set&#xD;&#xA;            {&#xD;&#xA;                $gridViewId$.SelectedIndex = FindRowIndex(value);&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        private int FindRowIndex($EntityType$ value)&#xD;&#xA;        {&#xD;&#xA;            if (value != null)&#xD;&#xA;                for (int i = 0; i &lt; $gridViewId$.DataKeys.Count; i++)&#xD;&#xA;                    if ((int)$gridViewId$.DataKeys[i][&quot;Id&quot;] == value.Id)&#xD;&#xA;                        return i;    &#xD;&#xA;            return -1;&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;    &lt;/script&gt;&#xD;&#xA;            &#xD;&#xA;                     &lt;asp:GridView ID=&quot;$gridViewId$&quot; runat=&quot;server&quot; AutoGenerateColumns=&quot;False&quot; &#xD;&#xA;              Width=&quot;100%&quot; AllowPaging=&quot;True&quot;  DataKeyNames=&quot;Id&quot;    OnSelectedIndexChanged=&quot;$gridViewId$_SelectedIndexChanged&quot;&#xD;&#xA;                AllowSorting=&quot;True&quot; PageSize=&quot;10&quot;  DataSourceId=&quot;$odsId$&quot;              &gt;&#xD;&#xA;                &lt;Columns&gt;&#xD;&#xA;                    &lt;asp:BoundField HeaderText=&quot;$Column1$&quot; DataField=&quot;$Column1$&quot; SortExpression=&quot;$Column1$&quot; /&gt;&#xD;&#xA;                               &lt;asp:CommandField SelectText=&quot;Select&quot; ShowSelectButton=&quot;true&quot; /&gt;&#xD;&#xA;                &lt;/Columns&gt;&#xD;&#xA;                &lt;EmptyDataTemplate&gt;&#xD;&#xA;                    There is no data.&#xD;&#xA;                &lt;/EmptyDataTemplate&gt;&#xD;&#xA;                &lt;HeaderStyle BackColor=&quot;SteelBlue&quot; BorderColor=&quot;White&quot; ForeColor=&quot;White&quot; HorizontalAlign=&quot;Center&quot; /&gt;&#xD;&#xA;            &lt;/asp:GridView&gt;&#xD;&#xA;            &lt;asp:ObjectDataSource ID=&quot;$odsId$&quot; runat=&quot;server&quot; TypeName=&quot;$DAOName$&quot;&#xD;&#xA;                EnablePaging=&quot;True&quot; MaximumRowsParameterName=&quot;pageSize&quot; StartRowIndexParameterName=&quot;startRow&quot;&#xD;&#xA;                SortParameterName=&quot;sortExpression&quot; SelectMethod=&quot;FindAll&quot; SelectCountMethod=&quot;CountAll&quot;&gt;&lt;/asp:ObjectDataSource&gt;" shortcut="AllGrid" description="grid of all entities of a type" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.ascx; *.aspx" />
+    </Context>
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="gridViewId" expression="" initialRange="0" />
+      <Variable name="EntityName" expression="" initialRange="1" />
+      <Variable name="EntityType" expression="capitalize(EntityName)" initialRange="0" />
+      <Variable name="Column1" expression="" initialRange="0" />
+      <Variable name="odsId" expression="" initialRange="1" />
+      <Variable name="DAOName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="1cbb3e1f-11f3-4cf7-8f3f-fd55de5f6630" text="&lt;script runat=&quot;server&quot;&gt;&#xD;&#xA;    [ViewStateField] protected int left = 50;&#xD;&#xA;    [ViewStateField] protected int top = 300;&#xD;&#xA;    &#xD;&#xA;    public int Left {&#xD;&#xA;        get { return left; }&#xD;&#xA;        set { left = value; }&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    public int Top {&#xD;&#xA;        get { return top; }&#xD;&#xA;        set { top = value; }&#xD;&#xA;    }        &#xD;&#xA;    protected override void OnPreRender(EventArgs e) {&#xD;&#xA;        base.OnInit(e);&#xD;&#xA;        pnlMain.Style.Add(&quot;left&quot;, Left + &quot;px&quot;);&#xD;&#xA;        pnlMain.Style.Add(&quot;Top&quot;, Top + &quot;px&quot;);&#xD;&#xA;    }&#xD;&#xA;   &#xD;&#xA;    public void Show(){&#xD;&#xA;        upMain.Update();&#xD;&#xA;        phMain.Visible = true;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    public void Hide(){&#xD;&#xA;        upMain.Update();&#xD;&#xA;        phMain.Visible = false;&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    protected void lbHide_Click(object sender, EventArgs e)&#xD;&#xA;    {&#xD;&#xA;        Hide();&#xD;&#xA;    }&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&lt;asp:UpdatePanel ID=&quot;upMain&quot; runat=&quot;server&quot; UpdateMode=&quot;conditional&quot;&gt;&#xD;&#xA;    &lt;ContentTemplate&gt;&#xD;&#xA;        &lt;asp:PlaceHolder runat=&quot;server&quot; ID=&quot;phMain&quot; Visible=&quot;false&quot;&gt;&#xD;&#xA;            &lt;asp:Panel runat=&quot;server&quot; ID=&quot;pnlMain&quot; Style=&quot;position: absolute; background: white;&#xD;&#xA;                width: 800px&quot;&gt;&#xD;&#xA;                &lt;table class=&quot;popupTable&quot; width=&quot;100%&quot; cellpadding=&quot;5&quot;&gt;&#xD;&#xA;                    &lt;tbody&gt;&#xD;&#xA;                        &lt;tr id=&quot;tr$panelName$Header&quot;&gt;&#xD;&#xA;                            &lt;td class=&quot;formheader&quot; align=&quot;left&quot;&gt;&#xD;&#xA;                                &lt;h3 class=&quot;formtitle&quot; style=&quot;width: 100%; display: inline&quot;&gt;&#xD;&#xA;                                    $PanelTitle$&#xD;&#xA;                                &lt;/h3&gt;&#xD;&#xA;                                &amp;nbsp; &amp;nbsp; &lt;span style=&quot;font-size: x-small&quot;&gt;click this banner to drag this panel&#xD;&#xA;                                &lt;/span&gt;&#xD;&#xA;                            &lt;/td&gt;&#xD;&#xA;                            &lt;td class=&quot;formheader&quot; align=&quot;right&quot; width=&quot;1%&quot;&gt;&#xD;&#xA;                                &lt;asp:LinkButton ID=&quot;LinkButton1&quot; OnClick=&quot;lbHide_Click&quot; runat=&quot;server&quot;&gt;X&lt;/asp:LinkButton&gt;&#xD;&#xA;                            &lt;/td&gt;&#xD;&#xA;                        &lt;/tr&gt;&#xD;&#xA;                        &lt;tr&gt;&#xD;&#xA;                            &lt;td colspan=&quot;2&quot;&gt;&#xD;&#xA;                                &lt;!-- put your content here --&gt;&#xD;&#xA;                            &lt;/td&gt;&#xD;&#xA;                        &lt;/tr&gt;&#xD;&#xA;                &lt;/table&gt;&#xD;&#xA;                &#xD;&#xA;            &lt;/asp:Panel&gt;&#xD;&#xA;            &lt;asp:DragPanelExtender ID=&quot;DragPanelExtender1&quot; runat=&quot;server&quot; TargetControlID=&quot;pnlMain&quot;&#xD;&#xA;                DragHandleID=&quot;tr$panelName$Header&quot; /&gt;&#xD;&#xA;        &lt;/asp:PlaceHolder&gt;&#xD;&#xA;    &lt;/ContentTemplate&gt;&#xD;&#xA;&lt;/asp:UpdatePanel&gt;" shortcut="DragablePanelControl" description="a panel that appears as a dragable panel" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx; *.ascx" />
+    </Context>
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="PanelTitle" expression="" initialRange="0" />
+      <Variable name="panelName" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="54561b9e-e55f-4907-b33d-da2e533ce107" text="[EntityFieldNullSafe]&#xD;&#xA;protected $Type$ $fieldName$;&#xD;&#xA;public $Type$ $PropertyName${&#xD;&#xA;   get{ return $fieldName$;}&#xD;&#xA;   set{ $fieldName$ = value;}&#xD;&#xA;}" shortcut="EntityFieldsProp" description="Property arround a persistant field" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="Type" expression="" initialRange="0" />
+      <Variable name="fieldName" expression="" initialRange="0" />
+      <Variable name="PropertyName" expression="capitalize(fieldName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="366be460-9ecc-4cdd-8a8e-5308e9d5575a" text="[StatefulField]&#xD;&#xA;protected $PropertyType$ $fieldName$;&#xD;&#xA;    &#xD;&#xA;public $PropertyType$ $PropertyName$ {&#xD;&#xA;  get{ return $fieldName$;}&#xD;&#xA;  set { $fieldName$ = value; }&#xD;&#xA;}" shortcut="StatefulFieldProp" description="property using a viewState field" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="PropertyType" expression="" initialRange="0" />
+      <Variable name="fieldName" expression="" initialRange="0" />
+      <Variable name="PropertyName" expression="capitalize(fieldName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="afd3e7ba-ec61-4b84-bba1-24f088a720f2" text="&lt;script runat=&quot;server&quot;&gt;&#xD;&#xA;       public event System.EventHandler $SingletonName$Selected; &#xD;&#xA;    &#xD;&#xA;    protected void SelectedIndexChanged(object sender, EventArgs e)&#xD;&#xA;    {&#xD;&#xA;        if ($SingletonName$Selected != null)&#xD;&#xA;            $SingletonName$Selected(this, new EventArgs());&#xD;&#xA;    }&#xD;&#xA;    protected void Page_Load(object sender, EventArgs e)&#xD;&#xA;    {&#xD;&#xA;        if (!IsPostBack) {&#xD;&#xA;            EnsureDDLDatabound();&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    /// &lt;summary&gt;&#xD;&#xA;    /// Ensure that the dropdownlist is databound&#xD;&#xA;    /// &lt;/summary&gt;&#xD;&#xA;    private void EnsureDDLDatabound() {&#xD;&#xA;        if (ddl$SingletonName$s.Items.Count &gt; 0)&#xD;&#xA;            return;&#xD;&#xA;        ddl$SingletonName$s.DataSource = $SingletonName$Repo.All;&#xD;&#xA;        ddl$SingletonName$s.DataTextField = &quot;Name&quot;;&#xD;&#xA;        ddl$SingletonName$s.DataValueField = &quot;TypeName&quot;;&#xD;&#xA;        ddl$SingletonName$s.DataBind();&#xD;&#xA;        ddl$SingletonName$s.Items.Insert(0, &quot;please select&quot;);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    public $SingletonType$ Selected$SingletonName$ {&#xD;&#xA;        get {&#xD;&#xA;            if (ddl$SingletonName$s.SelectedIndex &lt;= 0)&#xD;&#xA;                return null;&#xD;&#xA;            else&#xD;&#xA;                return $SingletonName$Repo.FindByTypeName(ddl$SingletonName$s.SelectedValue);&#xD;&#xA;        }&#xD;&#xA;        set {&#xD;&#xA;            EnsureDDLDatabound();&#xD;&#xA;            if (value == null)&#xD;&#xA;                ddl$SingletonName$s.SelectedIndex = 0;&#xD;&#xA;            else&#xD;&#xA;                ddl$SingletonName$s.SelectedValue = value.TypeName;&#xD;&#xA;            &#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&lt;asp:DropDownList ID=&quot;ddl$SingletonName$s&quot; runat=&quot;server&quot;  OnSelectedIndexChanged=&quot;SelectedIndexChanged&quot;&gt;&#xD;&#xA;&lt;/asp:DropDownList&gt;" shortcut="SingletonDDL" description="dropdownlist for a type of singletons" reformat="true" shortenQualifiedReferences="true">
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="SingletonName" expression="" initialRange="0" />
+      <Variable name="SingletonType" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="6ce9ebed-7cf9-4c05-a06b-3a4989f06e78" text="for (IEnumerator&lt;$ELEMENT_TYPE$&gt; en = $ASSOCIATION_FIELD$.GetEnumerator();&#xD;&#xA; en.MoveNext() ; en = $ASSOCIATION_FIELD$.GetEnumerator())&#xD;&#xA;  $REMOVE_ELEMENT_METHOD$(en.Current);" shortcut="ClearAssociation" description="Clear an collection association" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="Statement" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="ELEMENT_TYPE" expression="" initialRange="0" />
+      <Variable name="ASSOCIATION_FIELD" expression="" initialRange="0" />
+      <Variable name="REMOVE_ELEMENT_METHOD" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="440e7f92-a62a-4a74-b270-0c6af9f45ba3" text=" &lt;asp:ConfirmButtonExtender ID=&quot;cbe$TargetControlId$&quot; runat=&quot;server&quot; TargetControlID=&quot;$TargetControlId$&quot;&#xD;&#xA;                                        ConfirmText=&quot;$ConfirmText$&quot; /&gt;" shortcut="ConfirmButtonExtender" description="" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <FileNameContext mask="*.aspx;*.ascx" />
+    </Context>
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="TargetControlId" expression="" initialRange="1" />
+      <Variable name="ConfirmText" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="9c143953-c3df-41f7-b6d8-33e5e07c4c7c" text="    private $EntityT$ $FieldName$;&#xD;&#xA;    public $EntityT$ $PropertyName$ {&#xD;&#xA;        get&#xD;&#xA;        {&#xD;&#xA;            if (ViewState[&quot;$FieldName$ID&quot;] == null) return null;&#xD;&#xA;            if ($FieldName$ == null)&#xD;&#xA;                $FieldName$ = $EntityT$DAO.Instance.FindById((int)ViewState[&quot;$FieldName$ID&quot;]);&#xD;&#xA;            return $FieldName$;&#xD;&#xA;        }&#xD;&#xA;        set {&#xD;&#xA;            $FieldName$ = value;&#xD;&#xA;            if (value == null)&#xD;&#xA;                ViewState[&quot;$FieldName$ID&quot;] = null;&#xD;&#xA;            else &#xD;&#xA;                ViewState[&quot;$FieldName$ID&quot;] = value.Id;&#xD;&#xA;        }&#xD;&#xA;    }" shortcut="entityInViewState" description="persistent enitity in viewstate" reformat="false" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="Statement, TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="EntityT" expression="" initialRange="0" />
+      <Variable name="FieldName" expression="" initialRange="0" />
+      <Variable name="PropertyName" expression="capitalize(FieldName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+  <Template uid="97a284e1-d3e6-4db3-b60d-c8684e9ab2d1" text="    private int $fieldName$Id&#xD;&#xA;    {&#xD;&#xA;        get{&#xD;&#xA;              if (ViewState[&quot;$fieldName$ID&quot;] == null)&#xD;&#xA;                  return 0;&#xD;&#xA;               return (int) ViewState[&quot;$fieldName$ID&quot;];&#xD;&#xA;        }&#xD;&#xA;        set&#xD;&#xA;        {&#xD;&#xA;            ViewState[&quot;$fieldName$ID&quot;] = value;     &#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    private $PropType$ $fieldName$;&#xD;&#xA;    &#xD;&#xA;    public $PropType$ $PropName$ {&#xD;&#xA;        get&#xD;&#xA;        {&#xD;&#xA;            if ($fieldName$ == null &amp;&amp; $fieldName$Id &gt; 0)&#xD;&#xA;                $fieldName$ = $PropType$DAO.Instance.Get($fieldName$Id);&#xD;&#xA;            return $fieldName$;&#xD;&#xA;        }&#xD;&#xA;        set&#xD;&#xA;        {&#xD;&#xA;            $fieldName$ = value;&#xD;&#xA;            $fieldName$Id = value == null ? 0 : value.Id;&#xD;&#xA;        }&#xD;&#xA;    }" shortcut="eidView" description="EntityStoredInViewState with Id" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <CSharpContext context="TypeMember" minimumLanguageVersion="2.0" />
+    </Context>
+    <Categories>
+      <Category name="Asp.net" />
+    </Categories>
+    <Variables>
+      <Variable name="fieldName" expression="constant(&quot;fieldName&quot;)" initialRange="0" />
+      <Variable name="PropType" expression="capitalize(fieldName)" initialRange="-1" />
+      <Variable name="PropName" expression="capitalize(fieldName)" initialRange="0" />
+    </Variables>
+    <CustomProperties />
+  </Template>
+</TemplatesExport>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" schema="dbo" default-lazy="false">
+  <class name="MindHarbor.TimeDataUtil.Test.MockPersistantClass,MindHarbor.TimeDataUtil.Test" table="MockClass">
+    <id name="Id" type="Int32" >
+      <generator class="identity" />
+    </id>
+    <property name="Range" type="MindHarbor.TimeDataUtil.DateRangeUserType,MindHarbor.TimeDataUtil">
+      <column name="RangeStart"/>
+      <column name="RangeEnd" />
+    </property>
+  </class>
+</hibernate-mapping>

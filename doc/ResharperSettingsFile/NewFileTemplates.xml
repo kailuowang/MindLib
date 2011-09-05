@@ -1,0 +1,170 @@
+<TemplatesExport>
+  <Template uid="9bc350d6-ef02-42b4-aa48-8715481b930f" text="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using MindHarbor.DomainTemplate;&#xD;&#xA;using MindHarbor.GenClassLib.Validation;&#xD;&#xA;using MindHarbor.GenInterfaces;&#xD;&#xA;&#xD;&#xA;namespace $namespace${&#xD;&#xA;    public class $TypeName$ : $PersistantObjBase$, IHasName {&#xD;&#xA;        #region fields&#xD;&#xA;&#xD;&#xA;        private string name;&#xD;&#xA;&#xD;&#xA;        #endregion&#xD;&#xA;&#xD;&#xA;        #region Constrcutors&#xD;&#xA;        private $TypeName$() {}&#xD;&#xA;&#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// &#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        /// &lt;param name=&quot;name&quot;&gt;unique name for the $TypeName$. &lt;seealso cref=&quot;Name&quot;/&gt;&quot;/&gt;&lt;/param&gt;&#xD;&#xA;        /// &lt;exception cref=&quot;ValidationException&quot;&gt;&#xD;&#xA;        /// thrown when &lt;paramref name=&quot;name&quot;/&gt; fails to pass &lt;see cref=&quot;ValidateName(string)&quot;/&gt;&#xD;&#xA;        /// &lt;/exception&gt;&#xD;&#xA;        public $TypeName$(string name) {&#xD;&#xA;            ICollection&lt;ValidationError&gt; ves = ValidateName(name);&#xD;&#xA;            if (ves.Count &gt; 0)&#xD;&#xA;                throw new ValidationException(ves);&#xD;&#xA;            Name = name;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        #endregion&#xD;&#xA;&#xD;&#xA;        #region Public Properties&#xD;&#xA;&#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// The unique name of the plan&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        public string Name {&#xD;&#xA;            get { return name; }&#xD;&#xA;            private set { name = value; }&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// Gets the BusinessKey, that is, &lt;see cref=&quot;Name&quot;/&gt; for this plan&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        public override IComparable BusinessKey {&#xD;&#xA;            get { return Name; }&#xD;&#xA;        }&#xD;&#xA;     &#xD;&#xA;&#xD;&#xA;        #endregion&#xD;&#xA;&#xD;&#xA;        #region pubic methods&#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// Validate a candidate name for creating a $TypeName$&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        /// &lt;param name=&quot;n&quot;&gt;&lt;/param&gt;&#xD;&#xA;        /// &lt;returns&gt;a collection of &lt;see cref=&quot;ValidationError&quot;/&gt;.&#xD;&#xA;        /// If the validation passes, an empty collection will be returned&#xD;&#xA;        /// &lt;/returns&gt;&#xD;&#xA;        public static ICollection&lt;ValidationError&gt; ValidateName(string n) {&#xD;&#xA;            IList&lt;ValidationError&gt; retVal = new List&lt;ValidationError&gt;();&#xD;&#xA;            if (string.IsNullOrEmpty(n))&#xD;&#xA;                retVal.Add(new ValidationError(&quot;Empty name is invalid.&quot;));&#xD;&#xA;            if ($TypeName$DAO.Instance.FindByName(n) != null)&#xD;&#xA;                retVal.Add(new ValidationError(&quot;This name &quot; + n + &quot;is already used.&quot;));&#xD;&#xA;            return retVal;&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// rename this with validation&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        /// &lt;param name=&quot;newName&quot;&gt;&lt;/param&gt;&#xD;&#xA;        /// &lt;exception cref=&quot;ValidationException&quot;&gt;&#xD;&#xA;        /// thrown when &lt;paramref name=&quot;newName&quot;/&gt; fails to pass &lt;see cref=&quot;ValidateName(string)&quot;/&gt;&#xD;&#xA;        /// &lt;/exception&gt;&#xD;&#xA;        public void Rename(string newName)&#xD;&#xA;        {&#xD;&#xA;            if (newName == Name)&#xD;&#xA;                return;&#xD;&#xA;            else&#xD;&#xA;            {&#xD;&#xA;                ICollection&lt;ValidationError&gt; ves = ValidateName(newName);&#xD;&#xA;                if (ves.Count &gt; 0)&#xD;&#xA;                    throw new ValidationException(ves);&#xD;&#xA;                Name = newName;&#xD;&#xA;            }&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// overriden to return &lt;see cref=&quot;Name&quot; /&gt;&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        public override string ToString() {&#xD;&#xA;            return Name;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        #endregion&#xD;&#xA;&#xD;&#xA;        #region private methods&#xD;&#xA;&#xD;&#xA;        #endregion&#xD;&#xA;    }&#xD;&#xA;}" shortcut="" description="EnityWithUniqueName" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="namespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="TypeName" expression="getFileNameWithoutExtension()" initialRange="0" />
+      <Variable name="PersistantObjBase" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="EntityTypeName" />
+      <Property key="Extension" value="cs" />
+      <Property key="ValidateFileName" value="False" />
+    </CustomProperties>
+  </Template>
+  <Template uid="a5f572c1-d142-43df-839d-5dc93bdcb4b8" text="using NUnit.Framework;&#xD;&#xA;namespace $NameSpace$ {&#xD;&#xA;    [TestFixture]&#xD;&#xA;    public class $filename$ : NHRelatedTestBase {&#xD;&#xA;        [Test]&#xD;&#xA;        public void Test() {&#xD;&#xA;          &#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}" shortcut="" description="TestFixture" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="filename" expression="getFileNameWithoutExtension()" initialRange="0" />
+      <Variable name="NameSpace" expression="fileDefaultNamespace()" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Test" />
+      <Property key="Extension" value="cs" />
+    </CustomProperties>
+  </Template>
+  <Template uid="d95ab2ff-5219-4001-a422-cb7841b2481e" text="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Text;&#xD;&#xA;using NHibernate.Criterion;&#xD;&#xA;&#xD;&#xA;namespace $NAMESPACE$&#xD;&#xA;{&#xD;&#xA;    public class $DAOTYPE$ : NHibernate.Burrow.AppBlock.DAOBases.GenericDAO&lt;$EntityT$&gt;&#xD;&#xA;    {&#xD;&#xA;        private static readonly $DAOTYPE$ instance = new $DAOTYPE$();&#xD;&#xA;&#xD;&#xA;        public static $DAOTYPE$ Instance {&#xD;&#xA;            get { return instance; }&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;    }&#xD;&#xA;}" shortcut="" description="DAO" reformat="false" shortenQualifiedReferences="false">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="NAMESPACE" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="DAOTYPE" expression="getFileNameWithoutExtension()" initialRange="0" />
+      <Variable name="EntityT" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="DAO" />
+      <Property key="Extension" value="cs" />
+      <Property key="ValidateFileName" value="False" />
+    </CustomProperties>
+  </Template>
+  <Template uid="870000dd-03ec-415b-81bb-2f33a524bf38" text="using System;&#xD;&#xA;&#xD;&#xA;namespace $NameSpace$  &#xD;&#xA;{&#xD;&#xA;    public class $EntityName$EventArgs : System.EventArgs&#xD;&#xA;    {&#xD;&#xA;        private $EntityT$  $FieldName$;&#xD;&#xA;&#xD;&#xA;        public $EntityT$  $EntityName$ {&#xD;&#xA;            get { return  $FieldName$; }&#xD;&#xA;        }&#xD;&#xA;        public $EntityName$EventArgs($EntityT$  $FieldName$) {&#xD;&#xA;            this. $FieldName$ =  $FieldName$;&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    public delegate void  $EntityName$EventHandler(object sender, $EntityName$EventArgs arg );&#xD;&#xA;    &#xD;&#xA;}" shortcut="" description="EntityEvent" reformat="false" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="NameSpace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="EntityName" expression="" initialRange="0" />
+      <Variable name="EntityT" expression="capitalize(EntityName)" initialRange="0" />
+      <Variable name="FieldName" expression="decapitalize(EntityName)" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="EntityEvent" />
+      <Property key="Extension" value="cs" />
+    </CustomProperties>
+  </Template>
+  <Template uid="f3d3f13e-2081-42ab-92a9-c98045ec1420" text="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt; &#xD;&#xA;&lt;hibernate-mapping xmlns=&quot;urn:nhibernate-mapping-2.2&quot; schema=&quot;dbo&quot;  assembly=&quot;$AssemblyName$&quot; default-lazy=&quot;false&quot;&gt;&#xD;&#xA;  &lt;class name=&quot;$NameSpace$.$EnititT$&quot; table=&quot;tbl$EnititT$&quot;  &gt;&#xD;&#xA;    &lt;id name=&quot;Id&quot; type=&quot;Int32&quot;  unsaved-value=&quot;0&quot;&gt;&#xD;&#xA;      &lt;generator class=&quot;identity&quot; /&gt;&#xD;&#xA;    &lt;/id&gt;&#xD;&#xA;    &#xD;&#xA;  &lt;/class&gt;&#xD;&#xA;&lt;/hibernate-mapping&gt;" shortcut="" description="HibernateMappingFile" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="All" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="AssemblyName" expression="getOutputName()" initialRange="0" />
+      <Variable name="NameSpace" expression="getDefaultNamespace()" initialRange="0" />
+      <Variable name="EnititT" expression="getFileNameWithoutExtension()" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="File" />
+      <Property key="Extension" value="xml" />
+      <Property key="ValidateFileName" value="False" />
+    </CustomProperties>
+  </Template>
+  <Template uid="23b596c2-e5fe-4fd4-b2e4-4ec0d4c3ece6" text="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Text;&#xD;&#xA;&#xD;&#xA;namespace $namespace$&#xD;&#xA;{&#xD;&#xA;    internal class $filename$     {&#xD;&#xA;        private $InverseEntityT$ $inverseEntityFieldName$;&#xD;&#xA;        private $MainEntityT$ $mainEntityFieldName$;&#xD;&#xA;&#xD;&#xA;        public $filename$( $MainEntityT$  $mainEntityFieldName$,$InverseEntityT$ $inverseEntityFieldName$) {&#xD;&#xA;            $MainEntityPropertyName$ = $mainEntityFieldName$; &#xD;&#xA;            $InverseEntityPropertyName$ = $inverseEntityFieldName$;&#xD;&#xA;            $InverseEntityPropertyName$.Add$filename$(this);&#xD;&#xA;         }&#xD;&#xA;        &#xD;&#xA;        private $filename$() { }&#xD;&#xA;&#xD;&#xA;        public $MainEntityNamespace$.$MainEntityT$  $MainEntityPropertyName$  {&#xD;&#xA;            get { return  $mainEntityFieldName$; }&#xD;&#xA;            private set {  $mainEntityFieldName$ = value; }&#xD;&#xA;        }       &#xD;&#xA;        &#xD;&#xA;        public  $InverseEntityNamespace$.$InverseEntityT$  $InverseEntityPropertyName$ {&#xD;&#xA;            get { return $inverseEntityFieldName$; }&#xD;&#xA;            private set { $inverseEntityFieldName$ = value; }&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        public override IComparable BusinessKey {&#xD;&#xA;            get { return  $MainEntityPropertyName$.BusinessKey + BIZKEYSEP + $InverseEntityPropertyName$.BusinessKey; }&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        protected override void OnPreDeleted(object sender, EventArgs e){&#xD;&#xA;             $InverseEntityPropertyName$.Remove$filename$(this);&#xD;&#xA;                $MainEntityPropertyName$.Remove$filename$(this);&#xD;&#xA;            base.OnPreDeleted(sender, e);&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;/* hbm mapping file&#xD;&#xA;  &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt; &#xD;&#xA;&lt;hibernate-mapping xmlns=&quot;urn:nhibernate-mapping-2.0&quot; schema=&quot;dbo&quot;  assembly=&quot;$assemblyName$&quot; default-lazy=&quot;false&quot;&gt;&#xD;&#xA;  &lt;class name=&quot; $namespace$.$filename$&quot; table=&quot;tbl$filename$&quot;  &gt;&#xD;&#xA;    &lt;id name=&quot;Id&quot; type=&quot;Int32&quot;  unsaved-value=&quot;0&quot;&gt;&#xD;&#xA;      &lt;generator class=&quot;identity&quot; /&gt;&#xD;&#xA;    &lt;/id&gt;&#xD;&#xA;    &lt;many-to-one name=&quot;$InverseEntityPropertyName$&quot; class=&quot;$InverseEntityNamespace$.$InverseEntityT$&quot; column=&quot;$inverseEntityFieldName$Id&quot; /&gt; &#xD;&#xA;    &lt;many-to-one name=&quot;$MainEntityPropertyName$&quot; class=&quot;$MainEntityNamespace$.$MainEntityT$&quot; column=&quot;$mainEntityFieldName$Id&quot; /&gt;&#xD;&#xA;  &lt;/class&gt;&#xD;&#xA;&lt;/hibernate-mapping&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&lt;!--- mapping file at reverse side --&gt;&#xD;&#xA;  &lt;bag name=&quot;$IntermediateEntityPropertyName$s&quot; access=&quot;field.camelcase&quot; cascade=&quot;delete-orphan&quot; inverse=&quot;true&quot; lazy=&quot;true&quot;&gt;&#xD;&#xA;      &lt;key column=&quot;$inverseEntityFieldName$Id&quot; /&gt;&#xD;&#xA;      &lt;one-to-many class=&quot;$namespace$.$filename$&quot;  /&gt;&#xD;&#xA;    &lt;/bag&gt;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;  &lt;!--- mapping file at main entity side --&gt;&#xD;&#xA;&#xD;&#xA;  &lt;bag name=&quot;$IntermediateEntityPropertyName$s&quot; access=&quot;field.camelcase&quot; cascade=&quot;all-delete-orphan&quot; inverse=&quot;true&quot; lazy=&quot;true&quot;&gt;&#xD;&#xA;        &lt;key column=&quot;$mainEntityFieldName$Id&quot; /&gt;   &#xD;&#xA;        &lt;one-to-many class=&quot;$namespace$.$filename$&quot;  /&gt;&#xD;&#xA;      &lt;/bag&gt;&#xD;&#xA;*/&#xD;&#xA;&#xD;&#xA;/* code @ mainEntity (copy it to the main entity&#xD;&#xA;     private IList&lt;$filename$&gt; $field$s = new List&lt;$filename$&gt;();&#xD;&#xA;&#xD;&#xA;        public ICollection&lt;$InverseEntityT$&gt; $InverseEntityPropertyName$s {&#xD;&#xA;            get {&#xD;&#xA;                return&#xD;&#xA;                    new PropertyCollectionWrapper&lt;$filename$, $InverseEntityT$&gt;($field$s ,&#xD;&#xA;                                                                        &quot;$InverseEntityPropertyName$&quot;); }&#xD;&#xA;        }&#xD;&#xA; &#xD;&#xA;        public void Add$InverseEntityPropertyName$($InverseEntityT$ r)&#xD;&#xA;        {&#xD;&#xA;            if ( $InverseEntityPropertyName$s.Contains(r))&#xD;&#xA;                throw new Exception(&quot;This $InverseEntityPropertyName$ has already been assigned to this $MainEntityT$&quot;);&#xD;&#xA;            $field$s.Add(new $filename$(this, r));&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;        public void Remove$InverseEntityPropertyName$($InverseEntityT$ r) {&#xD;&#xA;           $filename$ ra = Find$filename$By$InverseEntityPropertyName$(r);&#xD;&#xA;            if (ra == null)&#xD;&#xA;                throw new Exception(&quot;This $MainEntityT$ does not have the $InverseEntityPropertyName$ to remove&quot;);&#xD;&#xA;           ra.Delete();&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;       &#xD;&#xA;        private $filename$ Find$filename$By$InverseEntityPropertyName$($InverseEntityT$ r) {&#xD;&#xA;            foreach ($filename$ ra in $field$s)&#xD;&#xA;                if (ra.$InverseEntityPropertyName$.Equals(r))&#xD;&#xA;                    return ra;&#xD;&#xA;            return null;&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;&#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// Only for $filename$.OnPredeleted to use&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        /// &lt;param name=&quot;val&quot;&gt;&lt;/param&gt;&#xD;&#xA;        internal void Remove$filename$( $filename$ val  )&#xD;&#xA;        {&#xD;&#xA;            $field$s.Remove(val);&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// for this.OnPredeleted to use&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;         private void Clear$filename$()&#xD;&#xA;        {&#xD;&#xA;            IList&lt;$filename$&gt; tmp = new List&lt;$filename$&gt;( $field$s);&#xD;&#xA;            foreach ($filename$ val in tmp)&#xD;&#xA;               val.Delete();&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;        &#xD;&#xA; */&#xD;&#xA; &#xD;&#xA;/* code @ inverseEntity type&#xD;&#xA;         private IList&lt;$filename$&gt; $field$s = new List&lt;$filename$&gt;();&#xD;&#xA; &#xD;&#xA;        /// &lt;summary&gt;&#xD;&#xA;        /// Only for $filename$.OnPreDeleted() to use&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        /// &lt;param name=&quot;ra&quot;&gt;&lt;/param&gt;&#xD;&#xA;        internal void Remove$filename$($filename$ ra){&#xD;&#xA;             $field$s.Remove(ra);&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;       /// &lt;summary&gt;&#xD;&#xA;        /// only for the construtor of RoleAssignment to call&#xD;&#xA;        /// &lt;/summary&gt;&#xD;&#xA;        /// &lt;param name=&quot;ra&quot;&gt;&lt;/param&gt;&#xD;&#xA;        internal void Add$filename$($filename$ ra) {&#xD;&#xA;            $field$s.Add(ra);&#xD;&#xA;        }&#xD;&#xA;        &#xD;&#xA;        private void Clear$filename$()&#xD;&#xA;        {&#xD;&#xA;            IList&lt;$filename$&gt; tmp = new List&lt;$filename$&gt;( $field$s);&#xD;&#xA;            foreach ($filename$ gm in tmp)&#xD;&#xA;                gm.Delete();&#xD;&#xA;        }&#xD;&#xA; &#xD;&#xA; */" shortcut="" description="IntermeidateEntity" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="namespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="filename" expression="getFileNameWithoutExtension()" initialRange="0" />
+      <Variable name="InverseEntityT" expression="" initialRange="0" />
+      <Variable name="inverseEntityFieldName" expression="decapitalize(InverseEntityT)" initialRange="0" />
+      <Variable name="MainEntityT" expression="" initialRange="0" />
+      <Variable name="mainEntityFieldName" expression="decapitalize(MainEntityT)" initialRange="0" />
+      <Variable name="MainEntityPropertyName" expression="capitalize(mainEntityFieldName)" initialRange="-1" />
+      <Variable name="InverseEntityPropertyName" expression="capitalize(inverseEntityFieldName)" initialRange="-1" />
+      <Variable name="MainEntityNamespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="InverseEntityNamespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="assemblyName" expression="getOutputName()" initialRange="-1" />
+      <Variable name="IntermediateEntityPropertyName" expression="capitalize(field)" initialRange="-1" />
+      <Variable name="field" expression="decapitalize(filename)" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Filename" />
+      <Property key="Extension" value="cs" />
+    </CustomProperties>
+  </Template>
+  <Template uid="5e083533-a51b-4756-a731-47174a84fab5" text="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Text;&#xD;&#xA;using MindHarbor.ClassEnum;&#xD;&#xA;&#xD;&#xA;namespace $NameSpace$&#xD;&#xA;{&#xD;&#xA;    public class $EnumName$ : ClassEnumGeneric&lt;$EnumName$&gt;&#xD;&#xA;    {&#xD;&#xA;        public readonly  static $EnumName$  $ItemOne$ = new $EnumName$(&quot;$ItemOne$&quot;);&#xD;&#xA;    &#xD;&#xA;        &#xD;&#xA;        private $EnumName$(string name):base(name) {}&#xD;&#xA;         public static  ICollection&lt;$EnumName$&gt; AllItems{get{ return Items;}}&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    public class $EnumName$UserType : ClassEnumUserType&lt;$EnumName$&gt;{}&#xD;&#xA;  &#xD;&#xA;    &#xD;&#xA;   &#xD;&#xA;}" shortcut="" description="ClassEnum" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="EnumName" expression="getFileNameWithoutExtension()" initialRange="-1" />
+      <Variable name="NameSpace" expression="fileDefaultNamespace()" initialRange="-1" />
+      <Variable name="ItemOne" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Enum" />
+      <Property key="Extension" value="cs" />
+    </CustomProperties>
+  </Template>
+  <Template uid="84bbd1a7-982a-46d4-ab7c-054b79a3e8b9" text="using System;&#xD;&#xA;&#xD;&#xA;namespace $Namespace$ {&#xD;&#xA;    public class $ExceptionName$ : $Exception$ {&#xD;&#xA;        public $ExceptionName$() : base() {}&#xD;&#xA;        public $ExceptionName$(string msg) : base(msg) {}&#xD;&#xA;    }&#xD;&#xA;}" shortcut="" description="Exception" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="ExceptionName" expression="getFileNameWithoutExtension()" initialRange="0" />
+      <Variable name="Namespace" expression="fileDefaultNamespace()" initialRange="-1" />
+      <Variable name="Exception" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Exception" />
+      <Property key="Extension" value="cs" />
+    </CustomProperties>
+  </Template>
+  <Template uid="9a1b2573-c489-43d9-afc7-e7f31a55aa74" text="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using MindHarbor.SingletonUtil;&#xD;&#xA;&#xD;&#xA;namespace $Namespace$&#xD;&#xA;{&#xD;&#xA;    public class $RepoName$&#xD;&#xA;    {&#xD;&#xA;        private static readonly $RepoName$ instance = new $RepoName$();&#xD;&#xA;&#xD;&#xA;        public static $RepoName$ Instance {&#xD;&#xA;            get { return instance; }&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        public readonly ICollection&lt;$SingletonName$&gt; All = InitializeAll();&#xD;&#xA;&#xD;&#xA;        private static  ICollection&lt;$SingletonName$&gt; InitializeAll() {&#xD;&#xA;            IList&lt;$SingletonName$&gt; retVal = new List&lt;$SingletonName$&gt;();&#xD;&#xA;            retVal.Add($FirstItem$.Instance);&#xD;&#xA;            return retVal;&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        public static $SingletonName$ FindByTypeName(string typeName)&#xD;&#xA;        {&#xD;&#xA;            return ($SingletonName$)SingletonInstanceLoader.Load(Type.GetType(typeName));&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;" shortcut="" description="SingletonsRepo" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories />
+    <Variables>
+      <Variable name="Namespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="RepoName" expression="getFileNameWithoutExtension()" initialRange="0" />
+      <Variable name="SingletonName" expression="" initialRange="0" />
+      <Variable name="FirstItem" expression="" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Repo" />
+      <Property key="Extension" value="cs" />
+    </CustomProperties>
+  </Template>
+  <Template uid="1321f14f-d38d-4527-a4b9-1ed6c4fb0dd6" text="using MindHarbor.GenClassLib.MessageBoard;&#xD;&#xA;namespace $namespace${ &#xD;&#xA;public class $MessageName$ : GenericMessageWithSource&lt;$MessageSourceType$&gt;&#xD;&#xA;{&#xD;&#xA;    &#xD;&#xA;    public ClearSegmentMessage($MessageSourceType$ $MessageSourceName$) : base($MessageSourceName$)&#xD;&#xA;    {&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;}" shortcut="" description="SysMessage" reformat="true" shortenQualifiedReferences="true">
+    <Context>
+      <ProjectLanguageContext language="CSharp" />
+    </Context>
+    <Categories>
+      <Category name="SysMessage" />
+    </Categories>
+    <Variables>
+      <Variable name="MessageName" expression="" initialRange="0" />
+      <Variable name="namespace" expression="fileDefaultNamespace()" initialRange="0" />
+      <Variable name="MessageSourceType" expression="" initialRange="0" />
+      <Variable name="MessageSourceName" expression="decapitalize(MessageSourceType)" initialRange="0" />
+    </Variables>
+    <CustomProperties>
+      <Property key="FileName" value="Message" />
+      <Property key="Extension" value="cs" />
+      <Property key="ValidateFileName" value="False" />
+    </CustomProperties>
+  </Template>
+</TemplatesExport>

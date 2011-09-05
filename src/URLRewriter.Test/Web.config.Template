@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<configuration>
+	<configSections>
+		<section name="URLRewriter" type="MindHarbor.URLRewriter.Config.URLRewriterSerializerSectionHandler, MindHarbor.URLRewriter"/>
+	</configSections>
+	<URLRewriter>
+		<Rules>
+			<RewriterRule>
+				<Rewriter>
+					<Pattern>~/UrlRewriter_aspx_id_EQ_(\d*)\.aspx</Pattern>
+					<Replace>~/UrlRewriter.aspx?id=$1</Replace>
+				</Rewriter>
+				<Redirection>
+					<Pattern>~/UrlRewriter.aspx\?id=(\d*)</Pattern>
+					<Replace>~/UrlRewriter_aspx_id_EQ_$1.aspx</Replace>
+				</Redirection>
+			</RewriterRule>
+		</Rules>
+	</URLRewriter>
+	<appSettings/>
+	<connectionStrings/>
+	<system.web>
+		<compilation debug="true"/>
+		<authentication mode="Windows"/>
+		<httpModules>
+			<add name="URLRewriter" type="MindHarbor.URLRewriter.URLRewriterModule,MindHarbor.URLRewriter"/>
+		</httpModules>
+	</system.web>
+</configuration>

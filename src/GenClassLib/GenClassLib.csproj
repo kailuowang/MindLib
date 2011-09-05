@@ -1,0 +1,194 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37EC7A12-25DA-4FC2-87FF-F8585AE2BBFE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>MindHarbor.GenClassLib</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MindHarbor.GenClassLib</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\MindHarbor.GenClassLib.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>..\..\bin\MindHarbor.GenClassLib.XML</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EncryptionClassLibrary, Version=1.0.2251.34626, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\EncryptionClassLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\NHibernate.Burrow\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\NHibernate.Burrow\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\CountriesDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\Month.cs" />
+    <Compile Include="Data\SessionData.cs" />
+    <Compile Include="Data\SQLDAHelper.cs" />
+    <Compile Include="Data\RandomStringGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\StatesCountriesDataHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\StatesDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\StatesEnum.cs" />
+    <Compile Include="Data\Tuples.cs" />
+    <Compile Include="ImpactReport\AssociationImpact.cs" />
+    <Compile Include="ImpactReport\EntityDeletionImpact.cs" />
+    <Compile Include="ImpactReport\EntityUpdateImpact.cs" />
+    <Compile Include="ImpactReport\IHasDeletionImpact.cs" />
+    <Compile Include="ImpactReport\IImpact.cs" />
+    <Compile Include="ImpactReport\ImpactBase.cs" />
+    <Compile Include="MessageBoard\BlockAllFilter.cs" />
+    <Compile Include="MessageBoard\DuplicationPreventionListenerFilter.cs" />
+    <Compile Include="MessageBoard\GenericMessageWithSource.cs" />
+    <Compile Include="MessageBoard\IListenerFilter.cs" />
+    <Compile Include="MessageBoard\IMessageWithSource.cs" />
+    <Compile Include="MessageBoard\IMessageWithSourceBroadcaster.cs" />
+    <Compile Include="MessageBoard\JunctionFilter.cs" />
+    <Compile Include="MessageBoard\GenericMessage.cs" />
+    <Compile Include="MessageBoard\IMessage.cs" />
+    <Compile Include="MessageBoard\IMessageBroadcaster.cs" />
+    <Compile Include="MessageBoard\IMessageFilter.cs" />
+    <Compile Include="MessageBoard\IMessageListener.cs" />
+    <Compile Include="MessageBoard\MessageBroadcasterImpl.cs" />
+    <Compile Include="MessageBoard\MessageFilterByTypeAndData.cs" />
+    <Compile Include="MessageBoard\MessageFilters.cs" />
+    <Compile Include="MessageBoard\MessageWithSourceBroadcasterImpl.cs" />
+    <Compile Include="MessageBoard\NullMsgFilter.cs" />
+    <Compile Include="MessageBoard\SpecificTypeMessageFilter.cs" />
+    <Compile Include="MessageBoard\SpecificTypesMessageFilter.cs" />
+    <Compile Include="MessageBoard\TypeMessageFilterBase.cs" />
+    <Compile Include="MiscUtil\CollectionUtil.cs" />
+    <Compile Include="MiscUtil\ConfigHelperBase.cs" />
+    <Compile Include="MiscUtil\CSVReaderUtil.cs" />
+    <Compile Include="MiscUtil\DateTimeUtil.cs" />
+    <Compile Include="MiscUtil\DownloadUtil.cs" />
+    <Compile Include="MiscUtil\EncryptionUtil.cs" />
+    <Compile Include="MiscUtil\GenericComparer.cs" />
+    <Compile Include="MiscUtil\HttpHelper.cs" />
+    <Compile Include="MiscUtil\InstanceLoader.cs" />
+    <Compile Include="MiscUtil\InterfaceCopier.cs" />
+    <Compile Include="MiscUtil\MathUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MiscUtil\StringUtil.cs" />
+    <Compile Include="ObjectReport\ObjectReporter.cs" />
+    <Compile Include="ProgressTracking\ProgressChangedArgs.cs" />
+    <Compile Include="ProgressTracking\ProgressTracker.cs" />
+    <Compile Include="Validation\IValidatable.cs" />
+    <Compile Include="Validation\ValidationError.cs" />
+    <Compile Include="Validation\ValidationException.cs" />
+    <Compile Include="XMLUtil\CompositeXmlMapperBase.cs" />
+    <Compile Include="XMLUtil\DictionarySerializer.cs" />
+    <Compile Include="XMLUtil\GeneralCompositeXmlMapper.cs" />
+    <EmbeddedResource Include="Data\CountriesDataTable.resx">
+      <DependentUpon>CountriesDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenInterfaces\GenInterfaces.csproj">
+      <Project>{41B7AC24-249C-4830-BE7D-275767996B34}</Project>
+      <Name>GenInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

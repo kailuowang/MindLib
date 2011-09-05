@@ -1,0 +1,1 @@
+*.exclude *.tmp *.bak */bin */Bin Bin */obj *.~?? *.suo *.user *.webinfo */CVS bin obj CVS *cvsignore* *resharper* .#* *ReSharper* Ankh.*Load */build Thumbs.db

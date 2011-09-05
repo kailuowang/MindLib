@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" schema="dbo" default-lazy="false">
+  <class name="MindHarbor.MiscNHibernateUserTypes.Test.MockPersistantClass,MindHarbor.MiscNHibernateUserTypes.Test" table="MockClass">
+    <id name="Id" type="Int32" >
+      <generator class="identity" />
+    </id>
+	  <property name="Password" type="MindHarbor.MiscNHibernateUserTypes.EncryptedStringType,MindHarbor.MiscNHibernateUserTypes"/>
+  </class>
+</hibernate-mapping>
